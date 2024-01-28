@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "service_call_result.proto";
+
+message UpdateRequest {
+}
+
+message UpdateResponse {
+	ServiceCallResult update_response = 1;
+}
+
+service UpdateService {
+	rpc GetAppUpdate (UpdateRequest) returns (UpdateResponse);
+}

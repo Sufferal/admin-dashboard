@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width, initial-scale=10.0" />
+    <title>Device Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3>Company name</h3> 
+        </header>
+        <main>
+            <div class="device">
+                <h2 class="device-dashboard">Device Dashboard</h2>
+                <div class="device-info">
+                    <p class="DeviceName">Device Name: <span class="device-name">HP EliteBook 840</span></p>
+                    <p class="ip">IP Address: <span class="ip-address">192.168.0.1</span></p>
+                    <p class="os-version">OS Version: <span class="version">10.0</span></p>
+                </div>
+                <div class="status-container">
+                    <p class="status">Status: <span class="device-status">Updated</span></p>
+                </div>
+                <div class="update-container">
+                    <button class="update-button" onclick="fetchData()">Update</button>
+                    <p id="response"></p>
+                    <script src="renderer.js"></script>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2023 Device Dashboard. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "service_call_result.proto";
+import "os_type.proto";
+
+message ClientDataInserterRequest {
+ string device_name = 1;
+ string ip_address = 2;
+ OsType os_type = 3;
+ string app_version = 4;
+}
+
+message ClientDataInserterResponse {
+    ServiceCallResult client_response = 1;
+}
+
+service ClientDataInserterService {
+ rpc SendClientData (ClientDataInserterRequest) returns (ClientDataInserterResponse);
+}

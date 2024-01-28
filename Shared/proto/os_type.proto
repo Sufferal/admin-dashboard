@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+enum OsType {
+    OS_TYPE_UNSPECIFIED = 0;
+    LINUX = 1;
+    WINDOWS = 2;
+}

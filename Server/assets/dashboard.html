@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/dashboard/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/dashboard/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/dashboard/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/dashboard/site.webmanifest">
+  <link rel="mask-icon" href="./img/favicon/dashboard/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./img/favicon/dashboard/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="./img/favicon/dashboard/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">    
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+
+  <!-- Title -->
+  <title>Dashboard</title>
+</head>
+<body>
+  
+  <div class="container">
+    <header class="header">
+      <h2 class="title">Devices</h2>
+      <button class="signout-btn" title="Logout">
+        <a href="login.html">
+          <img src="./img/button/logout.png" alt="signout-btn">
+        </a>
+      </button>
+    </header>
+
+    <div class="btns">
+      <button id="btnUpdate" class="control-btn" title="Update">
+        <img src="./img/button/update.png" alt="update">
+      </button>
+      <button id="btnRestart" class="control-btn" title="Restart">
+        <img src="./img/button/restart.png" alt="restart">
+      </button>
+      <button id="btnShutdown" class="control-btn" title="Shutdown">
+        <img src="./img/button/shutdown.png" alt="shutdown">
+      </button>
+    </div>
+
+    <div id="statusMsg"></div>
+    <table id="deviceTable" class="table">
+      <tr>
+        <th><input id="selectAllCheckbox" type="checkbox" name="selectAll" value="selectAll"></th>
+        <th>Device name</th>
+        <th>IP Address</th>
+        <th>Status</th>
+        <th>OS</th>
+        <th>Version</th>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- JS -->
+  <script type="module" src="./js/devices.js"></script>
+  <script type="module" src="./js/dashboard.js"></script>
+  <script type="module" src="./js/shutdown.js"></script>
+  <script type="module" src="./js/restart.js"></script>
+  <script type="module" src="./js/update.js"></script>
+</body>
+</html>

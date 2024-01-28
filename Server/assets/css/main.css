@@ -1,0 +1,40 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4b6cb7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.status {
+  opacity: 0;
+  border: 1px solid transparent;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.icon {
+  margin-right: 1rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border-color: #D8000C;
+}
+
+.success {
+  color: #34bca4;
+	background-color: #DFF2BF;
+  border-color: #34bca4;
+}

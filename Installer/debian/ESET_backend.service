@@ -1,0 +1,11 @@
+[Unit]
+Description=ESET Backend Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/eset/client/backend/backend
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

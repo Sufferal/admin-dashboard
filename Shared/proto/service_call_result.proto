@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+enum ServiceCallResult {
+    APP_UPDATE_RESULT_UNSPECIFIED = 0;
+    SERVICE_NOT_RESPONDED = 1;
+    SERVICE_FAILED_TO_EXECUTE = 2;
+    SERVICE_EXECUTED_SUCCESFULLY = 3;
+}

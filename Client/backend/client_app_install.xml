@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<Product Id="*" Name="Client Application" Language="1033" Version="1.0.0" Manufacturer="ESET Inter" UpgradeCode="A1774610-8C56-4E24-B40D-BC5486688D57">
+		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated"/>
+
+		<Property Id="WIXUI_INSTALLDIR" Value="ProgramFiles64Folder" />
+
+		<MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+		<MediaTemplate EmbedCab="yes" />
+
+		<UI>
+			<UIRef Id="WixUI_InstallDir" />
+		</UI>
+
+		<Feature Id="MainApplication" Title="Main Application" Level="1">
+			<ComponentRef Id="ClientAppServiceComponent" />
+		</Feature>
+
+		<Feature Id="GUIApplication" Title="GUI Application" Level="1">
+			<ComponentRef Id="ClientGUIComponent" />
+		</Feature>
+		
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFiles64Folder" Name="PFiles">
+				<Directory Id="ESET" Name="ESET">
+					<Directory Id="INSTALLFOLDER" Name="ClientApplication" DiskId="1" SourceName="Client Application Source" />
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<ComponentGroup Id="ClientAppServiceComponentGroup" Directory="INSTALLFOLDER">
+			<Component Id="ClientAppServiceComponent" Guid="6E6BB3E1-6033-46C7-A41E-C5D419D0D8BB" Win64="yes">
+				<File Id="ClientAppServiceFile" Source="..\build\backend\Release\backend.exe" KeyPath="yes" />
+				<ServiceInstall
+							Id="InstallServiceExe"
+							Account="LocalSystem"
+							Name="client-app"
+							DisplayName="Client Application"
+							Description="Client Application"
+							Start="auto"
+							Type="ownProcess"
+							ErrorControl="normal"
+					/>
+				<ServiceControl
+							Id="StartServiceExe"
+							Start="install"
+							Stop="both"
+							Remove="uninstall"
+							Name="client-app"
+							Wait="yes"
+					/>
+			</Component>
+		</ComponentGroup>
+
+		<ComponentGroup Id="ClientAppGuiComponentGroup" Directory="INSTALLFOLDER">
+			<Component Id="ClientGUIComponent" Guid="6FCA10DC-A459-422E-873C-1CAA9FB17332">
+				<File Id="ClientGUIFile" Source="..\gui\out\make\squirrel.windows\x64\ClientGUI.exe" KeyPath="yes" />
+			</Component>
+		</ComponentGroup>
+
+		<CustomAction Id="RunGuiExe" Directory="INSTALLFOLDER" ExeCommand="[INSTALLFOLDER]ClientGUI.exe" Execute="commit" Impersonate="no" Return="asyncNoWait" />
+		
+		<InstallExecuteSequence>
+			<Custom Action="RunGuiExe" Before="InstallFinalize" />
+		</InstallExecuteSequence>
+	
+	</Fragment>
+</Wix>

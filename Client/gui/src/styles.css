@@ -1,0 +1,111 @@
+/* CSS styles for the Device Dashboard */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left h1 {
+    margin: 0;
+}
+
+.header-right a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.device {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 4vh; /* Adjust padding as needed */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 12; /* Adjust width as needed */
+    max-width: 600px; /* Adjust max-width as needed */
+}
+
+.device-dashboard {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: calc(1.7vh + 2vw); /* Adjust font size as needed */
+    position: relative;
+    margin-bottom: 4vh; /* Add margin below the heading */
+}
+
+.device-info {
+    margin-bottom: 3vh; /* Adjust margin as needed */
+}
+
+.DeviceName,
+.ip,
+.os-version,
+.status {
+    font-size: calc(0.7vh + 1.5vw); /* Adjust font size as needed */
+    margin-bottom: 1vh; /* Adjust margin as needed */
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status {
+    margin-right: 1.5vw; /* Adjust margin as needed */
+}
+
+.device-status {
+    font-weight: bold;
+}
+
+.update-container {
+    margin-top: 2vh; /* Adjust margin as needed */
+}
+
+.update-button {
+    background-color: #12f509;
+    color: #fff;
+    border: none;
+    padding: 2vh ; /* Adjust padding as needed */
+    font-size: calc(1.8vh + 1.8vw); /* Adjust font size as needed */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .update-button:hover {
+        background-color: #11980c;
+    }
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}

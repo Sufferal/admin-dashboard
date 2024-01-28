@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/console/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/console/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/console/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/console/site.webmanifest">
+  <link rel="mask-icon" href="./img/favicon/console/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./img/favicon/console/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="./img/favicon/console/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/login.css">
+
+  <!-- Title -->
+  <title>Console</title>
+</head>
+<body>
+
+  <form class="form" action="/login" method="POST">
+    <div class="form-input">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-input">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <input id="btnLogin" class="form-btn" type="submit" value="Login">
+  </form> 
+
+  <div id="errorMsg" class="status error">
+    <img class="icon error-icon" src="./img/status/error.png" alt="error">
+    <h3 class="error-msg">Incorrect username or password</h3>
+  </div>
+
+  <!-- JS -->
+  <script src="./js/login.js"></script>
+</body>
+</html>

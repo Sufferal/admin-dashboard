@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "os_type.proto";
+
+message ManualUpdateRequest {
+	OsType OS = 1;
+}
+
+message ManualUpdateResponse {
+	bytes update_installer = 1;
+}
+
+service ManualUpdateService {
+	rpc PerformManualUpdate(ManualUpdateRequest) returns (stream ManualUpdateResponse);
+}

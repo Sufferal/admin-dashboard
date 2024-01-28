@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "service_call_result.proto";
+
+message ShutdownRequest {
+}
+
+message ShutdownResponse {
+    ServiceCallResult shutdown_service_result = 1;
+}
+
+message RestartRequest {
+}
+
+message RestartResponse {
+    ServiceCallResult restart_service_result = 1;
+}
+
+message UpdateApplicationRequest {
+    bytes app_installer = 1;
+}
+
+message UpdateApplicationResponse {
+    ServiceCallResult update_application_service_result = 1;
+}
+
+service AdminInstructions {
+    rpc Shutdown (ShutdownRequest) returns (ShutdownResponse);
+    rpc Restart (RestartRequest) returns (RestartResponse);
+    rpc UpdateApplication (stream UpdateApplicationRequest) returns (UpdateApplicationResponse);
+}
